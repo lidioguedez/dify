@@ -20,7 +20,7 @@ type Props = {
 }
 
 const maxIterationsMin = 1
-const maxIterationsMax = 5
+const maxIterationsMax = 50
 
 const AgentSetting: FC<Props> = ({
   isChatModel,
