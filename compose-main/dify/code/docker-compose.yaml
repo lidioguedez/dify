@@ -331,11 +331,7 @@ services:
 
   # Frontend web application.
   web:
-    build:
-      context: ../../../web
-      dockerfile: Dockerfile
-      tags:
-        - dify-web:local
+    image: web:local
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
