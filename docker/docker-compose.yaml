@@ -331,12 +331,11 @@ services:
 
   # Frontend web application.
   web:
-    #build:
-      #context: ../web
-      #dockerfile: Dockerfile
-      #tags:
-        #- dify-web:local
-    image: easypanel/bot/dify-web:latest
+    build:
+      context: ../web
+      dockerfile: Dockerfile
+      tags:
+        - dify-web:local
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
@@ -493,15 +492,15 @@ services:
       - api
       - web
     ports:
-      - '8080:80'
-      - '8443:443'
+      - '${EXPOSE_NGINX_PORT:-80}:${NGINX_PORT:-80}'
+      - '${EXPOSE_NGINX_SSL_PORT:-443}:${NGINX_SSL_PORT:-443}'
 
   # The TiDB vector store.
   # For production use, please refer to https://github.com/pingcap/tidb-docker-compose
   tidb:
     image: pingcap/tidb:v8.4.0
     ports:
-      - "4001:4000"
+      - "4000:4000"
     command:
       - --store=unistore
     restart: always
