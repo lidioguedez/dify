@@ -488,16 +488,6 @@ services:
       - api
       - web
 
-  # The TiDB vector store.
-  # For production use, please refer to https://github.com/pingcap/tidb-docker-compose
-  tidb:
-    image: pingcap/tidb:v8.4.0
-    ports:
-      - "4001:4000"
-    command:
-      - --store=unistore
-    restart: always
-
   # The Weaviate vector store.
   weaviate:
     image: semitechnologies/weaviate:1.19.0
