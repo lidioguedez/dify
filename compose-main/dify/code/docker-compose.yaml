@@ -332,7 +332,7 @@ services:
   # Frontend web application.
   web:
     build:
-      context: ../../web
+      context: ../../../web
       dockerfile: Dockerfile
       tags:
         - dify-web:local
