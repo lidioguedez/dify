@@ -488,8 +488,8 @@ services:
       - api
       - web
     ports:
-      - '80:80'
-      - '443:443'
+      - '80:8081'
+      - '443:8443'
 
   # The Weaviate vector store.
   weaviate:
