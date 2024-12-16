@@ -331,7 +331,7 @@ services:
 
   # Frontend web application.
   web:
-    image: web:local
+    image: dify-web:local
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
