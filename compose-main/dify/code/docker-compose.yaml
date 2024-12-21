@@ -472,7 +472,7 @@ services:
           /docker-entrypoint.sh"
       ]
     environment:
-      NGINX_SERVER_NAME: ${NGINX_SERVER_NAME:-_}
+      NGINX_SERVER_NAME: ${CERTBOT_DOMAIN}  # Usar la misma variable del dominio
       NGINX_HTTPS_ENABLED: ${NGINX_HTTPS_ENABLED:-false}
       NGINX_SSL_PORT: ${NGINX_SSL_PORT:-443}
       NGINX_PORT: ${NGINX_PORT:-80}
